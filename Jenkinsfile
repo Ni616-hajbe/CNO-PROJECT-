@@ -3,12 +3,12 @@ pipeline {
     agent any
 
     environment {
+        PATH = "/usr/local/bin:/opt/homebrew/bin:${env.PATH}"
         IMAGE_NAME = 'cloudops-dashboard'
         IMAGE_TAG = 'v1'
     }
 
     stages {
-
         stage('Checkout Code') {
             steps {
                 echo 'Fetching source code from GitHub...'
